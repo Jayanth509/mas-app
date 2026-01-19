@@ -1,0 +1,79 @@
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #eee;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* CONTENT — AUTO FIT 6 CARDS */
+.content {
+  flex: 1;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr); /* 🔥 forces 2x3 grid */
+  gap: 12px;
+}
+
+/* CARD */
+.card {
+  border: 1px solid #e7e7e7;
+  border-radius: 16px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.card svg {
+  width: 34px;
+  height: 34px;
+  stroke: #111;
+}
+
+.card span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.upcoming {
+  font-size: 11px;
+  color: #888;
+}
+
+.card.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* STICKY BOTTOM NAV */
+.bottom-nav {
+  position: sticky;
+  bottom: 0;
+  height: 64px;
+  background: #fff;
+  border-top: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.bottom-nav svg {
+  width: 26px;
+  height: 26px;
+  stroke: #111;
+}
