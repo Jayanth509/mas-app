@@ -21,7 +21,7 @@
   padding: 12px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr); /* 🔥 forces 2x3 grid */
+  grid-template-rows: repeat(3, 1fr);
   gap: 12px;
 }
 
@@ -36,6 +36,12 @@
   justify-content: center;
   gap: 6px;
   cursor: pointer;
+
+  /* Interaction */
+  transition: 
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
 }
 
 .card svg {
@@ -54,9 +60,31 @@
   color: #888;
 }
 
+/* HOVER – DESKTOP */
+@media (hover: hover) {
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+}
+
+/* PRESS – MOBILE */
+.card:active {
+  transform: scale(0.96);
+  background-color: #fafafa;
+}
+
+/* DISABLED */
 .card.disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+.card.disabled:hover,
+.card.disabled:active {
+  transform: none;
+  box-shadow: none;
+  background-color: #fff;
 }
 
 /* STICKY BOTTOM NAV */
